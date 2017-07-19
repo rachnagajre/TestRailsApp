@@ -86,6 +86,5 @@ test:
 #
 production:
   <<: *default
-  database: railsdb4_production
-  username: postgres
-  password: password
+  url: <%= ENV.fetch("DATABASE_URL") { "postgres://postgres:password@localhost/railsdb4_production" } %>
+  
